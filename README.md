@@ -22,4 +22,4 @@ shutdown.sh
 
 访问：
 
-https://locahost:8080/SIPStandardDebug
+http://locahost:8080/SIPStandardDebug
