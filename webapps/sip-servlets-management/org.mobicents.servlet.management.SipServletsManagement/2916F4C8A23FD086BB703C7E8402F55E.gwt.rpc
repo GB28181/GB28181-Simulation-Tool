@@ -1,0 +1,10 @@
+com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException, true
+java.lang.Exception, false
+java.lang.RuntimeException, false
+java.lang.String, true
+[Ljava.lang.String;, true
+java.lang.Throwable, false
+org.mobicents.servlet.management.client.router.DARRoute, true
+org.mobicents.servlet.management.client.router.DARRouteNode, true
+[Lorg.mobicents.servlet.management.client.router.DARRouteNode;, true
+[Lorg.mobicents.servlet.management.client.router.DARRoute;, true

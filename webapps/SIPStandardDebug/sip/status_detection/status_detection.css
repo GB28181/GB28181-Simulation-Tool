@@ -1,0 +1,16 @@
+
+.status_th_paramname{font-family:宋体;font-size:small;}
+.status_th_paramvalue{font-family:宋体;font-size:small}
+.status_title{font-family:黑体;font-size:medium;font-weight:bold;}
+
+.status_close{font-family:黑体;font-size:small;font-weight:bold;color:gray}
+.status_online{font-family:黑体;font-size:small;font-weight:bold;color:green}
+.status_offline{font-family:黑体;font-size:small;font-weight:bold;color:red}
+
+.status_detect_div{background:black;width:700px;height:350px;overflow:scroll}
+
+.status_log_debug{font-family:宋体;font-size:small;color:white}
+.status_log_info{font-family:宋体;font-size:small;color:green}
+.status_log_warning{font-family:宋体;font-size:small;color:orange}
+.status_log_error{font-family:宋体;font-size:small;color:red}
+

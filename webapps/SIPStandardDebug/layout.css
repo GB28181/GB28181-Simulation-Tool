@@ -1,0 +1,174 @@
+
+/*--------------------------------------------------
+ box base
+ ---------------------------------------------*/
+
+.tbox{/* 自适应宽度的块(通用块) */
+	width:100%;
+	border-bottom:1px solid #3399FF;
+	overflow:hidden;
+}
+.tbox dt{
+	height:25px;
+	background:url(images/tbar.png) right top no-repeat;
+	overflow:hidden;
+	clear:both;
+}
+.tbox dt strong{
+	height:25px;
+	line-height:25px;
+	padding-left:10px;
+	padding-right:4px;
+	display:block;
+	float:left;
+	/*color:#4A7749;*/
+	color:#000000;
+	/*background:url(images/mbox-tbg.png) left top no-repeat;*/
+	letter-spacing:1px;
+}
+.tbox dt strong a{
+	color:#000000;
+}
+.tbox dt strong a:hover{
+	color:#444;
+	text-decoration:none;
+}
+.tbox dt span.more{
+	float:right;
+	position:relative;
+	line-height:25px;
+	padding-right:8px;
+	color:#85A484;
+}
+.tbox dt span.more a{
+	color:#7B9D79;
+	text-decoration:none;
+}
+.tbox dt span.more a:hover{
+	color:#333;
+}
+.tbox dt span.label{
+	height:24px;
+	float:right;
+	overflow:hidden;
+	padding-right:1px;
+	padding-top:2px;
+}
+.tbox dt span.label a{
+	height:25px;
+	display:block;
+	padding:0px 7px 0px 8px;
+	line-height:23px;
+	border-left:1px solid #C5DDBC;
+	float:left;
+	color:#666;
+	text-decoration:none;
+	overflow:hidden;
+	letter-spacing:1px;
+}
+.tbox dt span.label a:hover{
+	color:#360;
+}
+.tbox dt span.label a.thisclass{
+	background:#FFF;
+	color:#333;
+	border-top:3px solid #F1F7EE;
+}
+.tbox dd{
+	height:270px;
+	border-left:1px solid #3399FF;
+	border-right:1px solid #3399FF;
+	margin:0;
+	padding:4px 4px 0px;
+	overflow:hidden;
+}
+
+.tbox dd ul{
+	margin:0;
+}
+
+/*---------- d : 附加信息列表 ---------*/
+.d1{/* 前置时间日期的小列表 */
+	padding:4px 0px;
+	list-style:none;
+}
+.d1 li{
+	height:27px;
+	line-height:27px;
+	overflow:hidden;
+}
+.d1 li span{
+	color:#999;
+	margin-right:5px;
+	float:left;
+}
+.d1 li a{
+}
+/*-------------------------------------------------- 
+ list icon
+ ---------------------------------------------*/
+.ico1 li{
+	padding-left:16px;
+	background:url(images/ico-1.gif) 7px 11px no-repeat;
+}
+.ico2 li{
+	padding-left:16px;
+	background:url(images/ico-2.gif) 6px 11px no-repeat;
+}
+.ico3 li{
+	padding-left:16px;
+	background:url(images/ico-3.gif) 7px 11px no-repeat;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.sendMsgTitle{
+	background-image: url("images/tbar.png");
+	height: 25px;
+	background-repeat: repeat-x;
+}
+.sendMsgTitle strong{
+	height:25px;
+	line-height:25px;
+	padding-left:10px;
+	padding-right:4px;
+	display:block;
+	float:left;
+	background-image: url("images/tbar.png");
+	/*background:url(images/mbox-tbg.png) left top no-repeat;*/
+	letter-spacing:1px;
+}
+
+.clear{
+	clear: both;
+}
+
+#layer2{
+	height: 300px;
+}
+#layer3{
+	height: 350px;
+}
+
+#layer3 textarea{
+	width : 100%;
+	border: 1px dashed;
+}
+*{
+	margin: 0;
+	padding:0;
+}
+

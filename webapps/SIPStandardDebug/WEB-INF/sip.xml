@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<sip-app>
+<app-name>SIPStandardDebug</app-name>
+  <display-name>SIP Servlet for SIPServer</display-name>
+  <distributable/>
+
+	<session-config>
+		<session-timeout>1440</session-timeout>
+	</session-config>
+
+  <servlet>
+    <servlet-name>accessservlet</servlet-name>
+    <servlet-class>cn.com.fri.axy.sip.interfaces.SipAccessServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  <listener>
+		<listener-class>cn.com.fri.axy.sip.interfaces.SipAccessServlet</listener-class>
+	</listener>
+	
+  <servlet-mapping>
+    <servlet-name>accessservlet</servlet-name>
+    <pattern>
+      <equal>
+	<var>request.method</var>
+	<value>REGISTER</value>
+      </equal>
+    </pattern>
+  </servlet-mapping>
+
+	<servlet-mapping>
+    <servlet-name>accessservlet</servlet-name>
+    <pattern>
+      <equal>
+		<var>request.method</var>
+		<value>MESSAGE</value>
+      </equal>
+    </pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>accessservlet</servlet-name>
+    <pattern>
+      <equal>
+	<var>request.method</var>
+	<value>INVITE</value>
+      </equal>
+    </pattern>
+  </servlet-mapping>
+  
+  <!-- 20140228 lishuo Add SUBSCRIBE/NOTIFY Features -->
+  <servlet-mapping>
+    <servlet-name>accessservlet</servlet-name>
+    <pattern>
+      <equal>
+	<var>request.method</var>
+	<value>SUBSCRIBE</value>
+      </equal>  
+    </pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>accessservlet</servlet-name>
+    <pattern>
+      <equal>
+	<var>request.method</var>
+	<value>NOTIFY</value>
+      </equal>
+    </pattern>
+  </servlet-mapping>
+  
+</sip-app>

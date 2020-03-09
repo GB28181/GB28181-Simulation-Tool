@@ -1,0 +1,136 @@
+/*-------------------------------------------------
+* For Common
+* -------------------------------------------------
+*/
+.clearfix:after {
+	content:".";
+	display:block;
+	height:0;
+	clear:both;
+	visibility:hidden
+	}
+.clearfix{display:inline-block}
+/* Hides from IE-mac \*/
+* html .clearfix {height:1%}
+.clearfix {display:block}
+/* End hide from IE-mac */
+
+.fl{float:left;display:inline}
+.fr{float:right;display:inline}
+.hidden{display:none !important;}
+.block{display:block}
+.inline{display:inline}
+.ti{text-indent:-9999px}
+.oh {overflow:hidden}
+.oa {overflow:auto}
+.cb {clear:both}
+.cl {clear:left}
+.cr {clear:right}
+.tl{text-align:left}
+.tr{text-align:right}
+.tc{text-align:center}
+.vm{vertical-align:middle}
+.vb {vertical-align:baseline}
+.pr{position:relative;z-index:800}
+.pa {
+	position:absolute;
+	z-index:1000;
+}
+.fn {font-weight:normal}
+.fb {font-weight:bold}
+.zm {*zoom:1}
+
+.ellipsis {
+	text-overflow:ellipsis;
+	overflow:hidden;
+	white-space:nowrap
+}
+.vt{ vertical-align:bottom;}
+
+.wt1 {width:315px;}
+.wt2 {width:300px;}
+.plr8{ padding:0 8px}
+.mlr10{margin:0 10px}
+.pl8{ padding-left:8px}
+.pl0{ padding-left:0 !important;}
+.p10{ padding:10px;}
+.pt10{padding-top:10px}
+.p1 {padding:1px}
+.pl10 {padding-left:10px}
+.pl20 {padding-left:20px}
+.pl25 {padding-left:25px}
+.pt5 {padding-top:5px}
+.pb2 {padding-bottom:2px}
+.pb5 {padding-bottom:5px}
+.pb10 {padding-bottom:10px}
+.p5{ padding:5px;}
+.p6{ padding:6px;}
+.p7{ padding:7px;}
+.p8{ padding:8px;}
+.pb8 {padding-bottom:8px}
+.pb12 {padding-bottom:12px}
+.ptb2 {padding:2px 0}
+.ptb10 {padding:10px 0}
+.pr5 {padding-right:5px}
+.pr15 {padding-right:15px}
+.plr5{ padding:0 5px;}
+.pl15 {padding-left:15px}
+.m1 {margin:1px}
+.mb5 {margin-bottom:5px}
+.mt5 {margin-top:5px}
+.mt10{margin-top:10px}
+.mlr5{ margin:0 5px;}
+.mr10{ margin-right:10px;}
+
+.mo {margin:0 auto}
+.bn {background:none !important;}
+.ht1 {height:1px}
+.ht12, .hn12 {height:12px}
+.ht1, .ht12, .hn12 {font-size:1px;line-height:1px}
+.tu {text-decoration:underline;}
+.orange {color:#f6821d !important;}
+.f20{ font-size:20px;}
+/*font*/
+body {
+	color:#333;
+	/*font:normal 12px/1.5 'Tahoma', 'simsun';*/
+	font:normal 12px/1.5 "Microsoft Yahei", Tahoma, Arial, Helvetica, STHeiti
+}
+
+h3, h4 {
+	font-family:'simsun', Tahoma, sans-serif;
+}
+/* link */
+a {
+	color: #1d398d
+}
+a:hover {
+	color:#f60
+}
+/*loading*/
+.mask {
+	top:0px;
+	left:0px;
+	background:#fff;
+	width:100%;
+	height:100%;
+	filter:alpha(opacity=70);
+	opacity:0.7
+}
+.loading {
+	background:url(../../images/loader.gif) no-repeat scroll 50% 50% #fff
+}
+
+.red,.red a,.red a:hover,.red:hover{ color:#F00;}
+.green{ color:#090;}
+.cp{cursor:pointer;}
+
+#footer {
+	color:#979b9e;
+	bottom:0;
+	width:100%;
+	background:url(../../images/led/reg-v2-footer-bg.png) repeat-x left bottom
+}
+.ct{ margin:0 auto;}
+
+.separator{ height:0px; line-height:0px;  width:230px; font-size:0px; border:none; border-top:#dbdddb 1px solid; border-bottom: #fdfffd 1px solid;}

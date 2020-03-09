@@ -1,0 +1,78 @@
+/*基本信息*/ 
+body {
+	background: url('images/BG.jpg') repeat-x scroll 0 0 transparent;
+	font:12px Tahoma;
+	margin:0px;
+	text-align:center;
+	}
+a:link,a:visited {font-size:12px;text-decoration:none;}
+a:hover{}
+
+
+/*页面层容器*/ 
+#container {background: none repeat scroll 0 0 #FFFFFF; width:950px; margin:0px auto; /*居中*/ }
+/*页面头部*/ 
+#header {background:url('images/logo.ico') no-repeat; font:20px ；}
+
+#banner{
+		width:950px; /*设定层的宽度*/
+		height: 40px;
+		margin:auto; /*层居中*/
+		clear:both; /*清除浮动*/
+		background-image: url("images/bar_02.gif");
+		background-repeat: repeat-x;
+	}
+#banner-left{
+		float: left;
+		display: inline;
+	}
+#banner-right{
+		float: right;
+		display: inline;
+	}
+
+#menu{
+		width:950px; /*设定层的宽度*/
+		margin:auto; /*层居中*/
+		clear:both; /*清除浮动*/
+	}
+#myjquerymenu{
+		width:735px; /*设定层的宽度*/
+		float: left;
+		display: inline;
+	}
+#info{
+		margin-top: 5px;
+		font: bold 12px Verdana;
+		text-align : left;
+		width:200px; /*设定层的宽度*/
+		height: 19px;
+		float: right;
+		display: inline;
+		border-bottom: 1px solid #3399FF;
+	}
+
+#othersystem_deviceid{
+		width:100px; /*设定层的宽度*/
+		height: 20px;
+		clear:left;
+	}
+	
+	
+/*页面主体*/ 
+#pagebody { width:950px; /*设定宽度*/ margin:8px auto; /*居中*/ text-align:left;}
+
+#layer2{  margin:5px auto; color:#c0c0c0}
+
+#layer2_left,#layer3_left{ width:470px; /*设定宽度*/ text-align:left; /*文字左对齐*/ float:left; /*左对齐*/ clear:left; /*不允许左侧存在浮动*/ overflow:hidden; /*超出宽度部分隐藏*/ /*border:1px solid #C5DDBC; height:100px*/}
+#layer2_right,#layer3_right{ width:470px; text-align:left; float:right; /*右对齐*/ clear:right; /*不允许右侧存在浮动*/ overflow:hidden ;}
+
+#layer2_left_left,#layer2_right_left { width:230px; text-align:left; float:left;  clear:right; /*不允许右侧存在浮动*/ overflow:hidden ; /*border:1px solid #C5DDBC; height:100px*/}
+#layer2_left_right,#layer2_right_right { width:230px; text-align:left; float:right;  clear:right; /*不允许右侧存在浮动*/ overflow:hidden ; /*border:1px solid #C5DDBC; height:100px*/}
+
+#layer3{  margin:5px auto; }
+
+/*页面底部*/ 
+#footer {width:950px;margin:0 auto;height:50px;clear:both;}
+
+/*#layer2_right_left{display:none;}*/ 

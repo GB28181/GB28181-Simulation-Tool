@@ -1,0 +1,78 @@
+<mappings>
+    <mapping>
+    	<method name= "getOnlineUserInfos" >
+       		<return-type componentType= "cn.com.fri.axy.common.def.webservicedata.WSUserInfo" />
+        </method>        
+       <method name= "getUserInfos" >
+       		<parameter index="2" componentType="cn.com.fri.axy.common.def.webservicedata.SQLStringValueIret" />
+            <return-type componentType= "cn.com.fri.axy.common.def.webservicedata.WSUserInfo" />
+        </method>   
+        <method name= "getDeviceInfos" >
+        	<parameter index="2" componentType="cn.com.fri.axy.common.def.webservicedata.SQLStringValueIret" />
+            <return-type componentType= "cn.com.fri.axy.common.def.webservicedata.WSDeviceInfo" />
+        </method>  
+        <method name="getActionLogs">
+        	<parameter index="2" componentType="cn.com.fri.axy.common.def.webservicedata.SQLStringValueIret" />        	        	
+        	<return-type componentType="cn.com.fri.axy.common.def.webservicedata.ActionLogIret" />
+        </method>   
+        <method name="getDevicePatrolLogs">
+        	<parameter index="2" componentType="cn.com.fri.axy.common.def.webservicedata.SQLStringValueIret" />        	        	
+        	<return-type componentType="cn.com.fri.axy.common.def.webservicedata.LCheckresultIret" />
+        </method> 
+        <method name="getHistoryVedioRecords">
+        	<parameter index="2" componentType="cn.com.fri.axy.common.def.webservicedata.SQLStringValueIret" />        	        	
+        	<return-type componentType="cn.com.fri.axy.common.def.webservicedata.MFileindexIret" />
+        </method>    
+        <method name="getDeviceSwitches">
+        	<parameter index="2" componentType="cn.com.fri.axy.common.def.webservicedata.SQLStringValueIret" />        	        	
+        	<return-type componentType="cn.com.fri.axy.common.def.webservicedata.DDeviceswitchIret" />
+        </method> 
+        <method name="getDeviceLocations">
+        	<parameter index="2" componentType="cn.com.fri.axy.common.def.webservicedata.SQLStringValueIret" />        	        	
+        	<return-type componentType="cn.com.fri.axy.common.def.webservicedata.DDevicelocationIret" />
+        </method>      
+        <method name="getDeviceInfoByID">        	       	        	
+        	<return-type componentType= "cn.com.fri.axy.common.def.webservicedata.WSDeviceInfo" />
+        </method> 
+        <method name="getCBlocks">        	       	        	
+        	<parameter index="2" componentType="cn.com.fri.axy.common.def.webservicedata.SQLStringValueIret" />  
+        	<return-type componentType= "cn.com.fri.axy.common.def.webservicedata.CBlockIret" />
+        </method> 
+        <method name="statisticByType">        	       	        	
+        	<return-type componentType= "cn.com.fri.axy.common.def.StatisticValue" />
+        </method> 
+        <method name="getDeviceInfosWithCount">     
+        <parameter index="2" componentType="cn.com.fri.axy.common.def.webservicedata.SQLStringValueIret" />    	       	        	
+        	<return-type componentType= "cn.com.fri.axy.common.def.webservicedata.WSDeviceInfoIret" />
+        </method>
+        <method name="getUserInfosWithCount">  
+        <parameter index="2" componentType="cn.com.fri.axy.common.def.webservicedata.SQLStringValueIret" />       	       	        	
+        	<return-type componentType= "cn.com.fri.axy.common.def.webservicedata.WSUserInfoIret" />
+        </method>
+        <method name="getAlarmResult">  
+        	<return-type componentType= "cn.com.fri.axy.common.def.AAlarmdisposeresult" />
+        </method>
+        <method name="getAAlarmrecordByProperty">  
+        <parameter index="4" componentType="cn.com.fri.axy.common.def.webservicedata.SQLStringValueIret" />       	       	        	
+        	<return-type componentType= "cn.com.fri.axy.common.def.webservicedata.AAlarmrecordIret" />
+        </method>
+        <method name="getACheckpostinfos">        	       	        	
+        	<return-type componentType= "cn.com.fri.axy.common.def.webservicedata.ACheckpostinfoIret" />
+        </method>
+        <method name="getChecksystogatewayrels">        	       	        	
+        	<return-type componentType= "cn.com.fri.axy.common.def.webservicedata.AChecksystogatewayrelIret" />
+        </method>
+        <method name= "getDevicesByUserAndAuthType">
+        	<parameter index="2" componentType="java.lang.String" />
+       		<return-type componentType= "cn.com.fri.axy.common.def.webservicedata.WSDeviceInfo" />
+        </method> 
+        <method name= "getDevicesByAuth">
+        	<parameter index="4" componentType="cn.com.fri.axy.common.def.webservicedata.SQLStringValueIret" />
+       		<return-type componentType= "cn.com.fri.axy.common.def.webservicedata.WSDeviceInfo" />
+        </method>
+        <method name="getDeviceCruiseInfos">
+        	<parameter index="2" componentType="cn.com.fri.axy.common.def.webservicedata.SQLStringValueIret" />        	        	
+        	<return-type componentType="cn.com.fri.axy.common.def.webservicedata.DevicecruiseinfoIret" />
+        </method>   
+    </mapping>
+</mappings>

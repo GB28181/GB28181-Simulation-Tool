@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CallTest>
+		<CallBean type="RealTimeCallBean">
+			<StartInterval>100</StartInterval>
+			<StopInterval>0</StopInterval>
+			<SourceID>64010000001310000040</SourceID>
+			<Resolution>1</Resolution>
+			<DestID>64010000003009999999</DestID>
+			<!-- 窗口号同时作为端口号 -->
+			<WID>10000</WID>
+		</CallBean>
+		
+		
+</CallTest>

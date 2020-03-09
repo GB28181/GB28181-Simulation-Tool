@@ -1,0 +1,506 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  	<head>
+    <title>媒体参数检测</title>
+    
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    
+	<link rel="shortcut icon" type="image/ico" href="images/logo.ico" />
+  	<link href="../lib/jquery.msgbox.css" rel="stylesheet" type="text/css" />
+  	
+  	<script type="text/javascript" src="../lib/jquery-1.4.4.js"></script>
+  	<script type="text/javascript" src="../lib/js-pushlet-client.js"></script>
+    <script type="text/javascript" src="../assets/api.js"></script>
+  	<script type="text/javascript" src="../lib/jquery.dragndrop.js"></script>
+	<script type="text/javascript" src="../lib/jquery.msgbox.js"></script>
+	<script type="text/javascript" src="../main.js"></script>
+	
+	</head>
+   
+	<body OnLoad="init()">
+
+	<object classid="CLSID:76A64158-CB41-11D1-8B02-00600806D9B6" id="locator" style="display:none;visibility:hidden"></object>
+	<object classid="CLSID:75718C9A-F029-11d1-A1AC-00C04FB6C223" id="foo" style="display:none;visibility:hidden"></object>
+    
+	<table width="100%" border="0" cellspacing="0" cellpadding="5" align="center">
+                    <!-- <tr style="background-color:#fcecb0">  -->
+                    <tr style="background-color:#3399FF">
+                        <td>
+                            <div align="center">
+                                <font face="Arial,Helvetica, sans-serif"><b><font size="6">GB/T 28181-2011 媒体流标准符合性检测工具</font></b></font></div>
+                        </td>			
+                    </tr>
+                    
+	</table>
+
+	<table cellspacing="0" cellpadding="2" style="margin-top: 10px" width="98%;" border="0" align="center">
+ 		   <tr>
+			<td>
+			</td>
+			<td>
+				<div align="left">
+				<font face="Arial,Helvetica, sans-serif"><b><font size="3"> 检测信息输出</font></b></font></div>
+			</td>	
+					
+		   </tr>
+		   <tr>
+			<td>
+				<div align="center">
+				<OBJECT ID="vlcplayer" CLASSID="CLSID:E6963FEA-95F6-4AA7-8C2C-44D5FB979B9A" width="352" height="288" align="500">  
+				</OBJECT>
+			</td>	
+			<td>
+                            <textarea id="txtMsg" cols="100" rows="20" ></textarea>
+                        </td>		
+		   </tr>
+		   <tr>
+			<td>							
+				<div align="left">
+				
+				<!-- <button  onclick="javascript:alert(vlcplayer.StopStream(vlcplayer.windowID))" >停止媒体流参数检测</button> -->
+				
+				<a href="#" id="stop_media_detect" onclick="stop_media_detect()">停止媒体参数检测</a>
+	
+			</td>
+			<td>
+			</td>
+		   </tr>
+		   
+	</table>
+	<br>
+	</br>
+
+	<table width="100%" border="0" cellspacing="0" cellpadding="5" align="center">
+                    <tr style="background-color:#3399FF">
+                        <td>
+                            <div align="left">
+                                <font face="Arial, Helvetica, sans-serif"><b><font size="4">RTP层实时参数</font></b></font></div>
+                        </td>			
+                    </tr>
+                    
+	</table>
+
+	<table cellspacing="0" cellpadding="2" style="margin-top: 10px" width="98%;" border="0" align="center">
+		    <tr>
+			<td>
+                            是否RTP流：
+                        </td>
+                        <td>
+                            <input type="text" id="IsRtpStream" value="" style="width: 220px;" />
+                        </td>
+		    </tr>
+                    <tr>
+			<td>
+                            RTP负载类型
+                        </td>
+                        <td>
+                            <input type="text" id="RtpPayloadType" value="" style="width: 220px" />
+                        </td>
+			<td>
+                            时间戳：
+                        </td>
+                        <td>
+                            <input type="text" id="RtpTimeStamp" value="" style="width: 220px" />
+                        </td>
+                        <td>
+                            SSRC值：
+                        </td>
+                        <td>
+                            <input type="text" id="RtpHeaderSSRC" value="" style="width: 220px;" />
+                        </td>
+                        
+                    </tr>
+		    <tr>
+                        <td>
+                            累计接收字节数(KB)：
+                        </td>
+                        <td>
+                            <input type="text" id="RtpRcvBytes" value="" style="width: 220px;" />
+                        </td>
+                        <td>
+                            平均带宽(Kbps)：
+                        </td>
+                        <td>
+                            <input type="text" id="RtpRcvRate" value="" style="width: 220px" />
+                        </td>
+ 			<td>
+                            最高峰值带宽(Kbps)：
+                        </td>
+                        <td>
+                            <input type="text" id="MaxRcvRate" value="" style="width: 220px" />
+                        </td>
+                    </tr>
+		    <tr>
+			<td>                            
+                        </td>
+                        <td>
+                        </td>
+ 			<td>
+                            最大帧字节数(Byte)：
+                        </td>
+                        <td>
+                            <input type="text" id="RtpMaxFrameSize" value="" style="width: 220px" />
+                        </td>
+ 			<td>
+                            最大帧接收时长(微秒)：
+                        </td>
+                        <td>
+                            <input type="text" id="RtpMaxFrameInterval" value="" style="width: 220px" />
+                        </td>
+
+		    </tr>
+		    <tr>
+			<td>
+                            RTP累计接收总包数：
+                        </td>
+                        <td>
+                            <input type="text" id="RtpTotalPackets" value="" style="width: 220px;" />
+                        </td>
+                        <td>
+                            RTP累计丢包数：
+                        </td>
+                        <td>
+                            <input type="text" id="RtpLostPackets" value="" style="width: 220px;" />
+                        </td>
+                        <td>
+                            丢包率(%)：
+                        </td>
+                        <td>
+                            <input type="text" id="RtpLostPackRate" value="" style="width: 220px" />
+                        </td>
+                    </tr>
+		    <tr>
+                        <td>
+                            接收帧率(fps)：
+                        </td>
+                        <td>
+                            <input type="text" id="RcvFrmRate" value="" style="width: 220px;" />
+                        </td>
+			<!-- <td>
+                            SSRC from SDP：
+                        </td>  -->
+						
+                    </tr>
+                    <tr>
+		    </tr>
+	</table>	
+
+
+	<table width="100%" border="0" cellspacing="0" cellpadding="5" align="center">
+                    <tr style="background-color:#3399FF">
+                        <td>
+                            <div align="left">
+                                <font face="Arial, Helvetica, sans-serif"><b><font size="4">PS层实时参数:</font></b></font></div>
+                        </td>			
+                    </tr>
+                    
+	</table>
+	<table cellspacing="0" cellpadding="2" style="margin-top: 10px" width="98%;" border="0" align="center">
+			<tr>
+			<td>
+                            是否PS流：
+                        </td>
+                        <td>
+                            <input type="text" id="IsPsStream" value="" style="width: 220px;" />
+                        </td>
+			<td>
+                            是否包含系统头：
+                        </td>
+                        <td>
+                            <input type="text" id="HaveSystemHeader" value="" style="width: 220px;" />
+                        </td>
+			<td>
+                            是否包含PSM：
+                        </td>
+                        <td>
+                            <input type="text" id="HavePSM" value="" style="width: 220px" />
+                        </td>
+		    </tr>
+                    
+		    <tr>			
+                        <td>
+                            ES流数目：
+                        </td>
+                        <td>
+                            <input type="text" id="ESNum" value="" style="width: 220px" />
+                        </td>
+			<td>
+                            视频ES流类型：
+                        </td>
+                        <td>
+                            <input type="text" id="VideoStreamType" value="" style="width: 220px" />
+                        </td>	
+			<td>
+                            音频ES流类型：
+                        </td>
+                        <td>
+                            <input type="text" id="AudioStreamType" value="" style="width: 220px" />
+                        </td>		
+                        
+                    </tr>
+	            <tr>
+			<td>
+                            当前帧系统时钟参考SCR：
+                        </td>
+                        <td>
+                            <input type="text" id="CurrentSCR" value="" style="width: 220px;" />
+                        </td> 
+			<td>
+                            当前帧显示时间戳(PTS)：
+                        </td>
+                        <td>
+                            <input type="text" id="CurrentPTS" value="" style="width: 220px" />
+                        </td>
+			<td>
+                            当前帧解码时间戳(DTS)：
+                        </td>
+                        <td>
+                            <input type="text" id="CurrentDTS" value="" style="width: 220px" />
+                        </td>	
+		    </tr>
+		    
+		    <tr>
+                        <td>
+                            解复用统计帧率(fps)：
+                        </td>
+                        <td>
+                            <input type="text" id="DmxFrmRate" value="" style="width: 220px;" />
+                        </td>   
+			<td>
+                            复用速率：
+                        </td>
+                        <td>
+                            <input type="text" id="MuxRate" value="" style="width: 220px;" />
+                        </td>                      
+                    </tr>
+                    <tr>
+		    </tr>
+</table>	
+    
+  
+
+<script language="javascript" type="text/javascript" for="vlcplayer" event="JsOnDetectMessage"> 
+//--显示播放器插件的检测报警消息
+function vlcplayer_JsOnDetectMessage() {
+	try{        
+	    var msg=vlcplayer.JsWarnMessage;
+	    txtMsg.value=msg+"\n"+txtMsg.value;
+	}catch(e){
+		;//
+	}
+}
+vlcplayer_JsOnDetectMessage();
+</script>
+
+<script>
+
+function refresh_vlcplayer_property()
+{
+	var msg;
+	msg=vlcplayer.JsIsRtpStream;
+	IsRtpStream.value = msg;
+	
+	msg=vlcplayer.JsRtpHeaderSSRC;
+	RtpHeaderSSRC.value = msg;
+
+	msg=vlcplayer.JsRtpPayloadType;
+	RtpPayloadType.value = msg;
+
+	msg=vlcplayer.JsRtpTimestamp;
+	RtpTimeStamp.value = msg;
+
+	msg=vlcplayer.JsRtpRcvBytes;
+	RtpRcvBytes.value = msg;
+
+	msg=vlcplayer.JsRtpRcvRate;
+	RtpRcvRate.value = msg;
+
+	msg=vlcplayer.JsMaxRtpRcvRate;
+	MaxRcvRate.value = msg;
+
+	msg=vlcplayer.JsRtpMaxFrmSize;
+	RtpMaxFrameSize.value = msg;
+
+	msg=vlcplayer.JsRtpMaxFrameInterval;
+	RtpMaxFrameInterval.value = msg;
+
+
+	msg=vlcplayer.JsRtpTotalPackets; 
+	RtpTotalPackets.value = msg;	
+
+	msg=vlcplayer.JsRtpLostPackets;
+	RtpLostPackets.value = msg;
+
+	msg=vlcplayer.JsLostPacketsRate;
+	RtpLostPackRate.value = msg;
+
+	msg=vlcplayer.JsRcvFrmRate;
+	RcvFrmRate.value = msg;
+
+	msg=vlcplayer.JsIsPsStream;
+	IsPsStream.value = msg;
+
+	msg=vlcplayer.JsCurrentSCR; 
+	CurrentSCR.value = msg;
+
+	msg=vlcplayer.JsMuxRate;
+	MuxRate.value = msg;
+
+	msg=vlcplayer.JsHaveSystemHeader;
+	HaveSystemHeader.value = msg;
+
+	msg=vlcplayer.JsHavePSM;
+	HavePSM.value = msg;
+
+	msg=vlcplayer.JsEsNum;
+	ESNum.value = msg;
+
+	msg=vlcplayer.JsVideoStreamType;
+	VideoStreamType.value = msg;
+		
+	msg=vlcplayer.JsAudioStreamType;
+	AudioStreamType.value = msg;
+	
+	msg=vlcplayer.JsCurrentPTS;
+	CurrentPTS.value = msg;
+
+	msg=vlcplayer.JsCurrentDTS;
+	CurrentDTS.value = msg;
+
+	msg=vlcplayer.JsDmxFrmRate;
+	DmxFrmRate.value = msg;
+
+}
+var timer1 = window.setInterval("refresh_vlcplayer_property();", 1000);
+</script>
+
+	<script language="javascript">
+		
+  		var sIPAddr="";
+		var service = locator.ConnectServer();
+		service.Security_.ImpersonationLevel=3;
+		service.InstancesOfAsync(foo, 'Win32_NetworkAdapterConfiguration');
+	</script>
+	
+	<script FOR="foo" EVENT="OnObjectReady(objObject,objAsyncContext)" LANGUAGE="JScript">
+        if(objObject.IPEnabled != null && objObject.IPEnabled != "undefined" && objObject.IPEnabled == true){
+			if(objObject.IPEnabled && objObject.IPAddress(0) !=null && objObject.IPAddress(0) != "undefined")
+			{
+				sIPAddr = objObject.IPAddress(0);
+			}
+         }
+         
+	</script>
+	
+<!-- Embed pushlet in page -->
+<script type="text/javascript">p_embed()</script>
+	
+<script language="javascript">
+  		
+		function init() {
+			
+			if(vlcplayer.url==undefined)
+			{
+				$.msgbox("您的浏览器没有安装系统所必须的ActiveX控件,<a href='../player/PMPPlayerX_setup.exe' target='_blank'>点击下载</a>,安装完毕后请重新启动IE浏览器!");
+			}
+			
+			//pushlet添加
+			initDHTML();
+			p_join_listen('/comet/play_notify');
+			
+		}
+		
+		//pushlet添加
+		// onData method called by pushlet frame
+		function onData(pushletEvent) {
+			var play_notify_action = pushletEvent.get('play_notify_action');
+			var play_notify_ip = pushletEvent.get('play_notify_ip');
+			var play_notify_port = pushletEvent.get('play_notify_port');
+			
+			//20140324 lishuo 增加消息中携带的ssrc值参数。
+			var play_notify_ssrc = pushletEvent.get('play_notify_ssrc');
+			//document.getElementById("sdp_ssrc").value=play_notify_ssrc;
+			
+			var play_notify_transport = pushletEvent.get('transport');
+			
+			//alert(play_notify_action);
+			//alert(play_notify_ip);
+			//alert(play_notify_port);
+			//alert(sIPAddr);
+			//参数检查，端口不再播放窗口范围之内，不执行播放操作
+			if(play_notify_port != 9010)
+			{
+					//$.msgbox("消息中指定的播放端口：" + play_notify_port + "不在本窗口播放范围之内。");
+					return;
+			}
+			
+			
+			if(play_notify_ip == sIPAddr)
+			{
+				//判断传输协议
+				if(play_notify_transport == "tcp")	//不支持tcp方式接收媒体流，仅支持9010端口播放的UDP视频媒体流
+				{
+					return;
+				}
+				
+				var url = "udp://@" + play_notify_ip + ":" + play_notify_port;
+				
+				vlcplayer.windowID = 1;
+				//alert(play_notify_action);
+				if(play_notify_action == "start")
+				{
+					//alert(play_notify_ssrc);
+					
+					vlcplayer.JsSsrcFromSDP = play_notify_ssrc;
+					vlcplayer.url = url;
+				}
+				else if(play_notify_action == "stop")
+				{
+					vlcplayer.StopStream(vlcplayer.windowID);
+				}
+				//20120514新增，回放控制时调用插件控制接口
+				else if(play_notify_action == "playback_play")
+				{
+					vlcplayer.JsReset(vlcplayer.windowID);
+				}
+				else if(play_notify_action == "playback_pause")
+				{
+					vlcplayer.StreamPause(vlcplayer.windowID);
+				}
+				else if(play_notify_action == "playback_fast")
+				{
+					vlcplayer.StreamFast(vlcplayer.windowID);
+				}
+				else if(play_notify_action == "playback_slow")
+				{
+					vlcplayer.StreamSlow(vlcplayer.windowID);
+				}
+			}
+			else
+			{
+				
+			}
+		}
+		
+		//停止媒体流添加
+		function stop_media_detect() {
+			
+			vlcplayer.StopStream(vlcplayer.windowID);
+			
+		}
+		
+		//拉框放大、拉框缩小添加
+		function drag_event_receive() {
+		
+		}
+	</script>
+	
+	
+  </body>
+</html>
+
+
+
+
+
+

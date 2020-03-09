@@ -1,0 +1,22 @@
+/*基本信息*/ 
+body {
+	background: url('images/BG.jpg') repeat-x scroll 0 0 transparent;
+	font:12px Tahoma;
+	margin:0px;
+	text-align:center;
+	}
+a:link,a:visited {font-size:12px;text-decoration:none;}
+a:hover{}
+
+
+/*页面层容器*/ 
+#container {width:100%; margin:0px auto; }
+
+#layer1{width:100%; height:160px; margin:0px auto; }
+
+#layer1_left{margin:0px auto; float:left;  clear:left;}
+#layer1_right{margin:0px auto; float:left; text-align:left; clear:right; }
+
+#layer2{width:100%;  margin:0px auto; text-align:left; }
+#layer3{width:100%;  margin:0px auto; }
+

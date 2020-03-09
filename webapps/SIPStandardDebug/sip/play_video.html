@@ -1,0 +1,295 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>视频播放</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+	<link rel="shortcut icon" type="image/ico" href="images/logo.ico" />
+  	<link href="../lib/jquery.msgbox.css" rel="stylesheet" type="text/css" />
+  	
+  	<script type="text/javascript" src="../lib/jquery-1.4.4.js"></script>
+  	<script type="text/javascript" src="../lib/js-pushlet-client.js"></script>
+    <script type="text/javascript" src="../assets/api.js"></script>
+  	<script type="text/javascript" src="../lib/jquery.dragndrop.js"></script>
+	<script type="text/javascript" src="../lib/jquery.msgbox.js"></script>
+	<script type="text/javascript" src="../main.js"></script>
+	
+   </head>
+   
+  <body OnLoad="init()">
+    
+    <object classid="CLSID:76A64158-CB41-11D1-8B02-00600806D9B6" id="locator" style="display:none;visibility:hidden"></object>
+	<object classid="CLSID:75718C9A-F029-11d1-A1AC-00C04FB6C223" id="foo" style="display:none;visibility:hidden"></object>
+    
+	<hr>
+	<OBJECT ID="vlcplayer" CLASSID="CLSID:E6963FEA-95F6-4AA7-8C2C-44D5FB979B9A" width="704" height="576" align="500">
+  	</OBJECT>
+	<hr>
+	<!--存储路径设置-->
+	<a href="#" id="media_store" onclick="media_store()" style="float:left;">设置媒体本地存储文件名</a>
+	
+	<!-- 点播前端设备ID号，每次点播时设置  -->
+  	<input type="hidden" name="deviceid" id="deviceid">
+  	
+	<!-- Embed pushlet in page -->
+	<script type="text/javascript">p_embed()</script>
+	
+	<script language="javascript">
+  		
+  		
+		function init() {
+			
+			//单独链接打开视频播放页面时，初始化页面参数，适用于IE浏览器
+			window.resizeBy(730 - document.body.clientWidth, 640 - document.body.clientHeight);
+			
+			if(vlcplayer.url==undefined)
+			{
+				$.msgbox("您的浏览器没有安装系统所必须的ActiveX控件,<a href='../player/PMPPlayerX_setup.exe' target='_blank'>点击下载</a>,安装完毕后请重新启动IE浏览器!");
+			}
+			
+			//pushlet添加
+			initDHTML();
+			p_join_listen('/comet/play_notify');
+			
+		}
+		
+		//pushlet添加
+		// onData method called by pushlet frame
+		function onData(pushletEvent) {
+			var play_notify_action = pushletEvent.get('play_notify_action');
+			var play_notify_ip = pushletEvent.get('play_notify_ip');
+			var play_notify_port = pushletEvent.get('play_notify_port');
+			
+			var play_notify_remote_ip = pushletEvent.get('play_notify_remote_ip');
+			var play_notify_remote_port = pushletEvent.get('play_notify_remote_port');
+			
+			var play_notify_deviceid = pushletEvent.get('deviceid');
+			var play_notify_transport = pushletEvent.get('transport');
+			
+			//设置deviceid
+			if(play_notify_deviceid != null && play_notify_deviceid != '')
+			{
+				document.getElementById("deviceid").value=play_notify_deviceid;
+			}
+			
+			//alert(play_notify_action);
+			//alert(play_notify_ip);
+			//alert(play_notify_port);
+			//参数检查，端口不再播放窗口范围之内，不执行播放操作
+			if(play_notify_port != 6000 && play_notify_port != 6010 && 
+					play_notify_port != 6020 && play_notify_port != 6030 && play_notify_port != 8000 
+					&& play_notify_port != 9910)
+			{
+					//$.msgbox("消息中指定的播放端口：" + play_notify_port + "不在本窗口播放范围之内。");
+					return;
+			}
+			
+			
+			if(play_notify_ip == sIPAddr)	//在当前客户端播放媒体流
+			{
+				var url;
+				//判断传输协议
+				if(play_notify_transport == "tcp")	//tcp方式接收媒体流
+				{
+					url = "tcp://" + play_notify_remote_ip + ":" + play_notify_remote_port;
+				}
+				else	//udp方式接收媒体流
+				{
+					url = "udp://@" + play_notify_ip + ":" + play_notify_port;
+				}
+				
+				if(play_notify_port == 8000)	//语音流处理
+				{
+					if(play_notify_action == "start")
+					{
+						//进行语音流开始播放操作
+						vlcplayer.JsStartLocalHeaderphone(play_notify_port);
+					}
+					else if(play_notify_action == "stop")
+					{
+						//进行语音流停止播放操作
+						vlcplayer.JsStopLocalHeaderphone(play_notify_port);
+					}
+				}
+				else	//视频流处理
+				{
+					var winID = port_map.get(play_notify_port.toString());
+					vlcplayer.windowID = winID;
+					//alert(winID);
+					if(play_notify_action == "start")
+					{
+						if(play_notify_port != 9910)
+						{
+							vlcplayer.url = url;
+						}
+						else
+						{
+							//进行媒体流本地保存，此处不执行操作
+							//alert('开始进行媒体流下载操作。');
+						}
+					}
+					else if(play_notify_action == "stop")
+					{
+						if(play_notify_port != 9910)
+						{
+							vlcplayer.StopStream(vlcplayer.windowID);
+						}
+						else
+						{
+							//完成媒体流存储
+							//alert('完成媒体流下载操作。');
+							vlcplayer.JsStopSave();
+						}
+					}
+					//20120514新增，回放控制时调用插件控制接口
+					else if(play_notify_action == "playback_play")
+					{
+						vlcplayer.JsReset(vlcplayer.windowID);
+					}
+					else if(play_notify_action == "playback_pause")
+					{
+						vlcplayer.StreamPause(vlcplayer.windowID);
+					}
+					else if(play_notify_action == "playback_fast")
+					{
+						vlcplayer.StreamFast(vlcplayer.windowID);
+					}
+					else if(play_notify_action == "playback_slow")
+					{
+						vlcplayer.StreamSlow(vlcplayer.windowID);
+					}
+				}
+				
+			}
+			else
+			{
+				
+			}
+		}
+		
+		
+		//媒体流本地保存添加
+		function media_store() {
+			//查询是否有下载媒体链路，若有则应提示先断开再下载
+			$.post(
+  				'/SIPStandardDebug/ajax',
+  				{
+  					requestType:'downloading'
+  				},
+  				function (data) // 回传函数
+  				{   
+                    //alert(data);
+                    if(data == 'none')
+                    {
+                    	vlcplayer.JsStopSave();
+                    	vlcplayer.JsOpenFileWindow();
+						vlcplayer.JsStartSave();
+						alert('请通过主页面发送下载请求建立下载链路。');
+                    }
+                    else
+                    {
+                    	alert('已有下载链路，请先断开再进行新的下载！');
+                    }
+  				},
+  				'html'
+			);
+			
+			//vlcplayer.JsOpenFileWindow();
+			//vlcplayer.JsStartSave();
+			//alert('请通过主页面发送下载请求建立下载链路。');
+		}
+		
+	</script>
+	
+	<script language="javascript">
+		
+		//初始化端口集合
+		var port_map = new Map();
+		port_map.put("6000","1");
+		port_map.put("6010","2");
+		port_map.put("6020","3");
+		port_map.put("6030","4");
+			
+		var sIPAddr="";
+		var service = locator.ConnectServer();
+		service.Security_.ImpersonationLevel=3;
+		service.InstancesOfAsync(foo, 'Win32_NetworkAdapterConfiguration');
+	</script>
+
+	<script FOR="foo" EVENT="OnObjectReady(objObject,objAsyncContext)" LANGUAGE="JScript">
+        if(objObject.IPEnabled != null && objObject.IPEnabled != "undefined" && objObject.IPEnabled == true){
+			if(objObject.IPEnabled && objObject.IPAddress(0) !=null && objObject.IPAddress(0) != "undefined")
+			{
+				sIPAddr = objObject.IPAddress(0);
+			}
+         }
+         
+         
+	</script>
+	
+	<script FOR="foo" EVENT="OnCompleted(hResult,pErrorObject, pAsyncContext)" LANGUAGE="JScript">
+		//alert(sIPAddr);
+         //设置4个窗口的URL
+         /*var url = "udp://@" + sIPAddr + ":" + 6000;
+         vlcplayer.windowID = 1;
+         vlcplayer.url = url;
+         url = "udp://@" + sIPAddr + ":" + 6010;
+         vlcplayer.windowID = 2;
+         vlcplayer.url = url;
+         url = "udp://@" + sIPAddr + ":" + 6020;
+         vlcplayer.windowID = 3;
+         vlcplayer.url = url;
+         url = "udp://@" + sIPAddr + ":" + 6030;
+         vlcplayer.windowID = 4;
+         vlcplayer.url = url;*/
+	</script>
+	
+	<SCRIPT LANGUAGE="Jscript" FOR="vlcplayer" EVENT="JsEventSelectMagnifierZoom()">
+		//alert("视频画面框选缩放事件:[画面缩放类型       ="+vlcplayer.JsnSelectMagnifierZoomType+"][视频画面宽x高="+vlcplayer.JsnSelectMagnifierVideoWidth+"x"+vlcplayer.JsnSelectMagnifierVideoHeight+"][框选中心点="+vlcplayer.JsnSelectMagnifierMidPointX+","+vlcplayer.JsnSelectMagnifierMidPointY+"][框选框宽x高="+vlcplayer.JsnSelectMagnifierLengthX+"x"+vlcplayer.JsnSelectMagnifierLengthY+"]");
+		
+		//TODO 调用插件接口，获取拖动参数
+			var drag_type;	//0:DragZoomIn，1:DragZoomOut
+			if(vlcplayer.JsnSelectMagnifierZoomType == 0)
+			{
+				drag_type = "DragZoomIn";
+			}
+			else
+			{
+				drag_type = "DragZoomOut";
+			}
+			var length = vlcplayer.JsnSelectMagnifierVideoWidth;
+			var width = vlcplayer.JsnSelectMagnifierVideoHeight;
+			var mid_point_x = vlcplayer.JsnSelectMagnifierMidPointX;
+			var mid_point_y = vlcplayer.JsnSelectMagnifierMidPointY;
+			var length_x = vlcplayer.JsnSelectMagnifierLengthX;
+			var length_y = vlcplayer.JsnSelectMagnifierLengthY;
+			
+			//发送AJAX请求，进行消息发送处理
+			$.post(
+  				'/SIPStandardDebug/ajax',
+  				{
+  					requestType:'drag_zoom',
+  					deviceid:$('#deviceid').val(),
+  					drag_type:drag_type,
+  					length:length,
+  					width:width,
+  					mid_point_x:mid_point_x,
+  					mid_point_y:mid_point_y,
+  					length_x:length_x,
+  					length_y:length_y
+  				},
+  				function (data) // 回传函数
+  				{   
+                    //alert(data);
+                    
+  				},
+  				'html'
+			);	
+	</SCRIPT>
+	
+	
+  </body>
+</html>

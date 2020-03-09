@@ -1,0 +1,63 @@
+.ui-multiselect {
+	BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; FONT-SIZE: 0.8em; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid
+}
+.ui-multiselect UL {
+	moz-user-select: none
+}
+.ui-multiselect LI {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 11px; PADDING-BOTTOM: 0px; MARGIN: 0px; CURSOR: default; LINE-HEIGHT: 20px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none; HEIGHT: 20px
+}
+.ui-multiselect LI A {
+	PADDING-RIGHT: 0px; DISPLAY: block; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 0px; CURSOR: pointer; COLOR: #999; PADDING-TOP: 0px; TEXT-DECORATION: none
+}
+.ui-multiselect LI.ui-draggable-dragging {
+	PADDING-LEFT: 10px
+}
+.ui-multiselect DIV.selected {
+	BORDER-TOP-WIDTH: 0px; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BORDER-LEFT-WIDTH: 0px; FLOAT: left; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; POSITION: relative; BORDER-RIGHT-WIDTH: 0px
+}
+.ui-multiselect UL.selected {
+	BORDER-TOP-WIDTH: 0px; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BORDER-LEFT-WIDTH: 0px; BACKGROUND: #fff; OVERFLOW-X: hidden; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; OVERFLOW: auto; WIDTH: 100%; PADDING-TOP: 0px; LIST-STYLE-TYPE: none; POSITION: relative; BORDER-RIGHT-WIDTH: 0px
+}
+.ui-multiselect UL.selected LI {
+	
+}
+.ui-multiselect DIV.available {
+	BORDER-TOP-WIDTH: 0px; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: left; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; BORDER-LEFT: 1px solid; PADDING-TOP: 0px; POSITION: relative; BORDER-RIGHT-WIDTH: 0px
+}
+.ui-multiselect UL.available {
+	BORDER-TOP-WIDTH: 0px; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BORDER-LEFT-WIDTH: 0px; BACKGROUND: #fff; OVERFLOW-X: hidden; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; OVERFLOW: auto; WIDTH: 100%; PADDING-TOP: 0px; LIST-STYLE-TYPE: none; POSITION: relative; BORDER-RIGHT-WIDTH: 0px
+}
+.ui-multiselect UL.available LI {
+	PADDING-LEFT: 10px
+}
+.ui-multiselect .ui-state-default {
+	PADDING-LEFT: 20px; MARGIN-BOTTOM: 1px; BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; POSITION: relative; BORDER-BOTTOM-STYLE: none
+}
+.ui-multiselect .ui-state-hover {
+	BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+.ui-multiselect .ui-widget-header {
+	FONT-SIZE: 11px; MARGIN-BOTTOM: 1px; BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+.ui-multiselect .add-all {
+	PADDING-RIGHT: 7px; PADDING-LEFT: 7px; FLOAT: right; PADDING-BOTTOM: 7px; PADDING-TOP: 7px
+}
+.ui-multiselect .remove-all {
+	PADDING-RIGHT: 7px; PADDING-LEFT: 7px; FLOAT: right; PADDING-BOTTOM: 7px; PADDING-TOP: 7px
+}
+.ui-multiselect .search {
+	PADDING-RIGHT: 4px; PADDING-LEFT: 4px; FLOAT: left; PADDING-BOTTOM: 4px; PADDING-TOP: 4px
+}
+.ui-multiselect .count {
+	PADDING-RIGHT: 7px; PADDING-LEFT: 7px; FLOAT: left; PADDING-BOTTOM: 7px; PADDING-TOP: 7px
+}
+.ui-multiselect LI SPAN.ui-icon-arrowthick-2-n-s {
+	LEFT: 2px; POSITION: absolute
+}
+.ui-multiselect LI A.action {
+	RIGHT: 2px; POSITION: absolute; TOP: 2px
+}
+.ui-multiselect INPUT.search {
+	PADDING-RIGHT: 1px; PADDING-LEFT: 1px; PADDING-BOTTOM: 1px; MARGIN: 4px; WIDTH: 100px; PADDING-TOP: 1px; HEIGHT: 14px; opacity: 0.5
+}

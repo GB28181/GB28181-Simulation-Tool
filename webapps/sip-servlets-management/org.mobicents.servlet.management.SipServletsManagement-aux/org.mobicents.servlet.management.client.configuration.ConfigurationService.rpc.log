@@ -1,0 +1,42 @@
+Reachable types computed on: Tue Oct 19 19:35:12 EDT 2010
+com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException
+   Serialization status
+      Instantiable
+   Path
+      'com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException' is reachable as a subtype of type 'class com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException'
+      Started from 'com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException'
+
+java.lang.Exception
+   Serialization status
+      Field serializable
+   Path
+      'java.lang.Exception' is reachable as a supertype of type 'class java.lang.RuntimeException'
+      'java.lang.RuntimeException' is reachable as a supertype of type 'class com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException'
+      'com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException' is reachable as a subtype of type 'class com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException'
+      Started from 'com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException'
+
+java.lang.RuntimeException
+   Serialization status
+      Field serializable
+   Path
+      'java.lang.RuntimeException' is reachable as a supertype of type 'class com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException'
+      'com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException' is reachable as a subtype of type 'class com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException'
+      Started from 'com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException'
+
+java.lang.String
+   Serialization status
+      Instantiable
+   Path
+      'java.lang.String' is reachable as a subtype of type 'class java.lang.String'
+      Started from 'java.lang.String'
+
+java.lang.Throwable
+   Serialization status
+      Field serializable
+   Path
+      'java.lang.Throwable' is reachable as a supertype of type 'class java.lang.Exception'
+      'java.lang.Exception' is reachable as a supertype of type 'class java.lang.RuntimeException'
+      'java.lang.RuntimeException' is reachable as a supertype of type 'class com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException'
+      'com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException' is reachable as a subtype of type 'class com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException'
+      Started from 'com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException'
+

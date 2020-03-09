@@ -1,0 +1,74 @@
+body{ background:#f4f7fa;}
+#main {
+box-shadow: 10px 8px 10px 5px #888;
+-moz-box-shadow:10px 8px 10px 5px #888;
+-webkit-box-shadow: 10px 8px 10px 5px #888;
+/*behaver: url(../ie-css3.htc);*/
+background:#f4f7fa;
+}
+#Example {
+-moz-box-shadow: inset 0 0 5px 5px #888;
+-webkit-box-shadow: inset 0 0 5px 5px#888;
+box-shadow: inset 0 0 5px 5px #888;
+}
+/*img {
+-moz-box-shadow:5px 5px 5px 2px #ccc;
+-webkit-box-shadow:5px 5px 5px 2px #ccc;
+box-shadow:5px 5px 5px 2px #ccc;
+box-shadow: 0 0 10px rgba(0, 255, 0, .5)
+}*/
+
+.main-wrap{display:block; margin:30px; border:#09C 1px solid;}
+.step-father{ display:block; height:100%;}
+
+.form_content {
+	border: #FFF 1px solid;
+	background:#FFF;
+	font-size:14px;
+	-moz-box-shadow: 2px 2px 2px #b0aea6; 
+	-webkit-box-shadow: 2px 2px 2px #b0aea6; 
+	box-shadow: 2px 2px 2px #b0aea6;
+	-moz-border-radius:10px; 
+	-webkit-border-radius:10px;
+	border-radius: 10px;
+}
+.title2{ padding-left:110px; font-size:12px;}
+
+
+.button_container {
+	LINE-HEIGHT: 50px;
+	BACKGROUND: #cedcbe;
+	HEIGHT: 50px;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	background-clip: padding-box;
+}
+.buttons{
+	WIDTH: 169px !important;
+	HEIGHT: 50px;
+	overflow:hidden;
+	right:5px; top:50%;
+	margin-top:-25px;
+}
+
+.btn-step1 {
+	BACKGROUND:url(../../images/btn-step-1.gif??09VBgdAF) no-repeat 0px 0px;
+}
+.btn-step2 {
+	BACKGROUND:url(../../images/btn-step-2.gif??10VBgdAF) no-repeat 0px 0px;
+}
+.btn-step3 {
+	BACKGROUND:url(../../images/btn-finish.gif??11VBgdAF) no-repeat 0px 0px;
+}
+
+.form_step{ 
+	width:480px;
+	opacity: 0;
+	position: absolute;
+	margin-left: -240px;
+	top: 100px;
+	right:-9999px;
+}
+.step_1{ opacity:1;left:50%;}
+.notice{ height:20px; line-height:20px; font-size:12px;}

@@ -1,0 +1,13 @@
+
+.config_layer{  margin:5px auto; color:#c0c0c0；text-align:left; /*文字左对齐*/ clear:left; /*不允许左侧存在浮动*/ overflow:hidden; /*超出宽度部分隐藏*/}
+
+.config_th_paramname{width:300px;}
+.config_th_paramvalue{width:300px;}
+
+.config_td_paramname{text-align:left; /*文字左对齐*/}
+
+.config_input{width:280px;}
+
+#config_layer2, #config_layer3, #config_layer4{display:none;}
+
+	

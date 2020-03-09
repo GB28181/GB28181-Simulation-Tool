@@ -1,0 +1,33 @@
+#Saved by 1521194248381
+#Fri Mar 16 17:57:28 CST 2018
+sipdevice_othersystem_camera_id=34010000001310000001
+media_dest_ip=192.168.230.11
+sipserver_password=12345678
+history_endtime=20180727010956
+sipdevice_decoder_monitor_id=34020000001330000001
+sipdevice_IPC_alarm_id=34020000001340000010
+sipdevice_IPC_password=12345678
+history_starttime=20180707010456
+simulate=1
+sipdevice_othersystem_port=5060
+large_msg_timeout=60
+media_dest_id=34010000002020000001
+media_dest_port=6000
+sipserver_ip=192.168.230.50
+sipdevice_IPC_id=34020000001320000001
+sipdevice_othersystem_alarm_id=34020000001340000001
+sipdevice_othersystem_password=12345678
+sipdevice_DVR_password=12345678
+sipdevice_DVR_alarm_id=34020000001340000001
+sipserver_id=34010000002000000001
+sipdevice_decoder_password=12345678
+sipdevice_othersystem_ip=192.168.230.100
+sipserver_domainname=3401000000
+sipdevice_DVR_camera_id=34020000001310000053
+sipdevice_decoder_id=34020000001140000001
+sipserver_port=50000
+sipdevice_DVR_id=34020000001180000002
+protocal=1
+sipdevice_othersystem_audiooutput_id=34020000001370000001
+sipdevice_othersystem_id=34010000001310000001
+simulate_id=34080000002000000001

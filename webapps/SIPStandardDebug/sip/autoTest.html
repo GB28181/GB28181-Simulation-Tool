@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>标准自动检测页面</title>
+<link rel="stylesheet" type="text/css" href="../lib/multiSteps/css/reset.css">
+<link rel="stylesheet" type="text/css" href="../lib/multiSteps/css/led/global.css">
+<link rel="stylesheet" type="text/css" href="../lib/multiSteps/css/led/multiSteps.css">
+
+    <LINK href="../lib/multiSelect/common.css" type=text/css rel=stylesheet>
+    <LINK href="../lib/multiSelect/jquery-ui.css" type=text/css rel=stylesheet>
+    <LINK href="../lib/multiSelect/ui.multiselect.css" type=text/css rel=stylesheet>
+    
+<script type="text/javascript" src="../lib/multiSteps/script/jquery/core/1.42/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="../lib/multiSteps/script/jquery/plugin/multiSteps.js"></script>
+
+	<SCRIPT src="../lib/multiSelect/jquery-ui.min.js" type=text/javascript></SCRIPT>
+	<SCRIPT src="../lib/multiSelect/jquery.localisation-min.js" type=text/javascript></SCRIPT>
+	<SCRIPT src="../lib/multiSelect/jquery.scrollTo-min.js" type=text/javascript></SCRIPT>
+	<SCRIPT src="../lib/multiSelect/ui.multiselect.js" type=text/javascript></SCRIPT>
+	
+<!--[if lte IE 8]>
+<script type="text/javascript" src="../lib/multiSteps/script/common/html5.js"></script>
+<![endif]-->
+</head>
+
+<body>
+<!--[if lte IE 8]>
+<div style='position:absolute; width:99%; left:6px;top:15px; height:500px; background:#888;filter:progid:DXImageTransform.Microsoft.Blur(pixelradius=5);-ms-filter:"progid:DXImageTransform.Microsoft.Blur(pixelradius=5)"';></div>
+<![endif]-->
+<!--
+	此处模拟了IE9以下版本的阴影效果,
+	何种情况使用滤镜请根据自身慎重考虑。
+    此段内容删除，ie下滑动会更加平滑。
+-->
+ <section id="main" class="main-wrap pr oh" style=" height:500px;">
+      <h1 class="pa ti pointer hidden">导出word</h1>
+      <article class="step-father p10">
+      	<div class="step_1 form_step">
+        	<section class="form_content p10 clearfix">
+                <img class="fl mr10" alt="Step 1" src="../lib/multiSteps/images/step_1.gif">
+                <h1 class="f20 pt10 pb5">选择检测设备类型</h1>
+                <p class="title2">副标题或者简单介绍</p>
+                <p class="block cl pb10 pl15 pr15">
+                	<select size="4" id="device_type_choice" name="device_type_choice">
+						<option selected value="dvr">DVR</option>
+						<option value="ipc">IPC</option>
+						<option value="decoder">解码器</option>
+						<option value="othersystem">互联系统</option>
+					</select>
+                </p>
+                <div class="button_container pr p8">
+                	<a id="step_one" class="block buttons btn-step1 pa ti" onClick="; return false;"  href="#">下一步</a>
+                </div>
+            </section>
+        </div>
+        <div class="step_2 form_step">
+        	<section class="form_content p10 clearfix">
+                <img class="fl mr10" alt="Step 2" src="../lib/multiSteps/images/step_2.gif">
+                <h1 class="f20 pt10 pb5">选择检测功能</h1>
+                <p class="title2">副标题或者简单介绍</p>
+                <p class="block cl pb10 pl15 pr15">
+                	<SELECT class="multiselect" id="check_function" multiple name="check_function[]">
+						<OPTION value="RealTime" selected>实时点播</OPTION>
+						<OPTION value="PTZ_Left">向左</OPTION>
+						<OPTION value="PTZ_Right">向右</OPTION>
+						<OPTION value="PTZ_Up">向上</OPTION>
+						<OPTION value="PTZ_Down">向下</OPTION>
+						<OPTION value="PTZ_ZoomIn">放大</OPTION>
+						<OPTION value="PTZ_ZoomOut">缩小</OPTION>
+						<OPTION value="PTZ_Stop">停止遥控</OPTION>
+						<OPTION value="History">回放</OPTION>
+						<OPTION value="Download">下载</OPTION>
+						<OPTION value="PlaybackControl_Play">播放</OPTION>
+						<OPTION value="PlaybackControl_Pause">暂停</OPTION>
+						<OPTION value="PlaybackControl_Fast">快放</OPTION>
+						<OPTION value="PlaybackControl_Slow">慢放</OPTION>
+						<OPTION value="StartRecord">开始手动录像</OPTION>
+						<OPTION value="StopRecord">停止手动录像</OPTION>
+						<OPTION value="FileQuery">录像文件检索</OPTION>
+						<OPTION value="SetGuard">布防</OPTION>
+						<OPTION value="Alarm">报警</OPTION>
+						<OPTION value="ResetGuard">撤防</OPTION>
+						<OPTION value="ResetAlarm">报警复位</OPTION>
+						<OPTION value="DeviceCatalog">设备目录查询</OPTION>
+						<OPTION value="DeviceInfo">设备信息查询</OPTION>
+						<OPTION value="DeviceStatus">设备状态查询</OPTION>
+						<OPTION value="Boot">设备远程启动</OPTION>
+						<OPTION value="Keepalive">心跳</OPTION>
+					</SELECT>
+                </p>
+                <div class="button_container pr p8">
+                	<a href="javascript:void(0)" class="prevStep">上一步</a>
+                	<a id="step_two" class="block buttons btn-step2 ti pa" onClick="; return false;"  href="#">下一步</a>
+                </div>
+            </section>
+        </div>
+        <div class="step_3 form_step">
+        	<section class="form_content p10 clearfix">
+                <img class="fl mr10" alt="Step 3" src="../lib/multiSteps/images/step_3.gif">
+                <h1 class="f20 pt10 pb5">开始执行检测</h1>
+                <p class="title2">副标题或者简单介绍</p>
+                <p class="block cl pb10 pl15 pr15">正文内容<br>正文内容<br>正文内容<br>正文内容</p>
+                <div class="button_container pr p8">
+                	<a href="javascript:void(0)" class="prevStep">上一步</a>
+                	<a id="step_three" class="block buttons btn-step3 ti pa" onClick="; return false;"  href="#">下一步</a>
+                </div>
+            </section>
+        </div>
+      </article>
+ </section>
+</body>
+<script language="javascript">
+$(function(){
+	/*
+		插件的上一步操作，只进行了简单的可逆操作，
+		宽度自适应的时候会存在问题:
+			当前步骤的前（后）两步在页面放大之后会出现在视野中，需要注意。
+	解决：
+		getSteps中增加返回值oldstep（当前步骤的前（后）两步）
+		然后在styleSteps中的left或right定位设置为一个不可见位置即可。
+		可等待我发布下一版本修订或者自己修改（修改后请告知,谢谢。)
+	Email: Ethan.zhu83@gmail.com
+	  QQ : 12377166
+	*/
+	var _beforeSlide = function(){
+		var finishTag = true;
+		alert("现在开始执行第一步，\n插件中默认返回值为true，\n如果返回值为false则不往下执行。");
+		//取得设备类型参数
+		
+		return finishTag; //false不执行
+	};
+	var _callback = function(){
+		alert("第一步执行完成，\n这里没有返回值判断，\n可以根据需要自行设置。");	
+	}
+	$("#step_one").multiSteps({beforeSlide:_beforeSlide,callback:_callback});
+	$(".prevStep").multiSteps({slidefor:'prev'});
+	$("#step_two").multiSteps({callback:function(){alert("第二步执行完成")}});
+	$("#step_three").click(function(){
+		window.location.reload(); 
+	});
+	
+});
+</script>
+</html>
