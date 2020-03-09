@@ -1,8 +1,12 @@
 # GB28181-Simulation-Tool
 
+平台、设备模拟测试工具
+
 #### Description
 
-进入bin 目录 q启动git bash shell：
+
+
+进入bin 目录启动git bash：
 
 启动：
 
