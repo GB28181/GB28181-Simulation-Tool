@@ -7,7 +7,9 @@
 
 ##### 进入bin 目录
 
-Windows版本启动git bash(建议)：
+Windows 启动git bash(建议)：
+
+Linux (首先：`chmod 744 *.sh`  给所有后缀为.sh的可执行文件赋予权限)
 
 启动：
 
