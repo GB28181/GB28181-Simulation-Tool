@@ -28,7 +28,7 @@ shutdown.sh
 
 访问：
 
-http://locahost:8080/SIPStandardDebug#
+http://localhost:8080/SIPStandardDebug#
 
 ### License
 
